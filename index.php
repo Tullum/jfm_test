@@ -1,26 +1,39 @@
+<!-- arbejds-->
+
 <h1>Animal shelter</h1>
 
 <?php
 $catData = [
-    ["type" => 'cat', "color" => 'red and white', "race" => "persian", "age" => 5, "vet" => "Yes", "price" => 1500 ],
-    ["type" => 'cat', "color" => 'grey', "race" => "egytian mau", "age" => 2, "vet" => "No", "price" => 1500],
+["type" => 'Cat', "color" => 'red and white', "race" => "persian", "age" => 5, "vet" => "Yes", "price" => 500, /*"addedVetPrice" => 1500*/],
+["type" => 'Cat', "color" => 'grey', "race" => "egytian mau", "age" => 2, "vet" => "No", "price" => 500, /*"addedVetPrice" => 0*/ ],
 ];
 $dogData = [
-    ["type" => 'dog', "color" => 'black and white', "race" => "husky", "age" => 7, "vet" => "Yes", "price" => 1500],
-    ["type" => 'dog', "color" => 'white', "race" => "samoyed", "age" => 3, "vet" => "No", "price" => 1500],
+    ["type" => 'Dog', "color" => 'black and white', "race" => "husky", "age" => 7, "vet" => "Yes", "price" => 1500],
+    ["type" => 'Dog', "color" => 'white', "race" => "samoyed", "age" => 3, "vet" => "No", "price" => 1500],
 ];
 $rabbitData = [
-    ["type" => 'rabbit', "color" => 'multiple', "race" => "lionhead", "age" => 2, "vet" => "Yes", "price" => 1500],
-    ["type" => 'rabbit', "color" => 'white', "race" => "drawf rabbit", "age" => 1, "vet" => "No", "price" => 1500],
+    ["type" => 'Rabbit', "color" => 'multiple colors', "race" => "lionhead", "age" => 2, "vet" => "Yes", "price" => 150],
+    ["type" => 'Rabbit', "color" => 'white', "race" => "drawf rabbit", "age" => 1, "vet" => "No", "price" => 150],
 ];
+
+
 
 
 
 ?><ul>
     <li style="color:#f20505";> <h2> Cat </h2>
-    <?php foreach ($catData as ["type" => $catType, "color" => $catColor, "race" => $catRace, "age" => $catAge, "vet" => $catVet, "price" => $catPrice])
+    <?php foreach ($catData as ["type" => $catType, "color" => $catColor, "race" => $catRace, "age" => $catAge, "vet" => $catVet, "price" => $catPrice, /*"addedVetPrice" => $addedVetPrice*/])
 
-
+/*$addedVetPrice = 1500;
+if($catAge > 1 ) 
+{
+    echo "total price: ";
+    echo $catPrice;
+}
+else{
+    echo "total price: ";
+    echo $catPrice + $addedVetPrice;
+}*/
 
 {
     echo 
@@ -31,14 +44,28 @@ $rabbitData = [
                 <p>Color:  $catColor  </p>
                 <p>Visit by the vet: $catVet </p>
                 <p>Price for adobtion: $catPrice </p>
+                
             </ul>
         </ol>";
     
 } 
+
+
+
+               
+
+
+/*function addedVetPrice($addedVetPrice = 1500)
+{
+return $catPrice + $addedVetPrice;
+}*/
+
+
+
 ?>
-    </li>
+  </li>
     <li style="color:#fc9003";> <h2> Dog </h2>
-   <?php foreach ($dogData as ["type" => $dogType, "color" => $dogColor, "race" => $dogRace, "age" => $dogAge, "vet" => $dogVet, "price" => $dogPrice])
+   <?php  foreach ($dogData as ["type" => $dogType, "color" => $dogColor, "race" => $dogRace, "age" => $dogAge, "vet" => $dogVet, "price" => $dogPrice])
 {
     echo 
      "<ol><h3>Cats in the shelter:  $dogType </h3>
@@ -70,7 +97,7 @@ $rabbitData = [
         </ol>";
     
 } ?>
-</li>
+</li> 
 </ul>
 <ul> <?php
 
