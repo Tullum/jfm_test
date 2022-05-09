@@ -1,11 +1,9 @@
-<!-- arbejds-->
-
 <h1>Animal shelter</h1>
 
 <?php
 $catData = [
-["type" => 'Cat', "color" => 'red and white', "race" => "persian", "age" => 5, "vet" => "Yes", "price" => 500, /*"addedVetPrice" => 1500*/],
-["type" => 'Cat', "color" => 'grey', "race" => "egytian mau", "age" => 2, "vet" => "No", "price" => 500, /*"addedVetPrice" => 0*/ ],
+["type" => 'Cat', "color" => 'red and white', "race" => "persian", "age" => 5, "vet" => "Yes", "price" => 500, "addedVetPrice" => 1500],
+["type" => 'Cat', "color" => 'grey', "race" => "egytian mau", "age" => 2, "vet" => "No", "price" => 500, "addedVetPrice" => 0 ],
 ];
 $dogData = [
     ["type" => 'Dog', "color" => 'black and white', "race" => "husky", "age" => 7, "vet" => "Yes", "price" => 1500],
@@ -22,19 +20,18 @@ $rabbitData = [
 
 ?><ul>
     <li style="color:#f20505";> <h2> Cat </h2>
-    <?php foreach ($catData as ["type" => $catType, "color" => $catColor, "race" => $catRace, "age" => $catAge, "vet" => $catVet, "price" => $catPrice, /*"addedVetPrice" => $addedVetPrice*/])
+    <?php foreach ($catData as ["type" => $catType, "color" => $catColor, "race" => $catRace, "age" => $catAge, "vet" => $catVet, "price" => $catPrice, "addedVetPrice" => $addedVetPrice])
 
 /*$addedVetPrice = 1500;
 if($catAge > 1 ) 
 {
-    echo "total price: ";
-    echo $catPrice;
+    echo "Total price: $catPrice<p>";
 }
 else{
-    echo "total price: ";
-    echo $catPrice + $addedVetPrice;
+    echo "<p>Total price: $catPrice + $addedVetPrice</p>";
 }*/
 
+  
 {
     echo 
      "<ol><h3>Cats in the shelter:  $catType </h3>
@@ -44,7 +41,8 @@ else{
                 <p>Color:  $catColor  </p>
                 <p>Visit by the vet: $catVet </p>
                 <p>Price for adobtion: $catPrice </p>
-                
+                <!--<p>Bill from the vet:  /*$addedVetPrice*/ </p>-->
+                <!--<p>Price in total: /*$catPrice + $addedVetPrice*/</p>-->
             </ul>
         </ol>";
     
@@ -55,7 +53,7 @@ else{
                
 
 
-/*function addedVetPrice($addedVetPrice = 1500)
+/*function addedVetPrice($addedVetPrice, $catPrice)
 {
 return $catPrice + $addedVetPrice;
 }*/
@@ -100,8 +98,4 @@ return $catPrice + $addedVetPrice;
 </li> 
 </ul>
 <ul> <?php
-
-
-
-
 
